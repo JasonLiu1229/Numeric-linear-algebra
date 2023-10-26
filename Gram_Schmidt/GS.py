@@ -7,15 +7,7 @@ def classicGramSchmidt(A: np.matrix) -> tuple:
     R = np.zeros((n, n))
     V = np.matrix(A, copy=True)
     for i in range(n):
-        for j in range(i-1):
-            q = Q[:, j]
-            q = np.transpose(np.asmatrix(q))
-            qT = np.transpose(np.asmatrix(q))
-            R[j, i] = qT @ A[:,i]
-            V[:,i] = V[i:,] - R[j, i] * Q[:,j]
-        R[i, i] = np.linalg.norm(V[i])
-        Q[:,i] = V[:,i] / R[i, i]
-    return Q, R
+        pass
 
 
 def modifiedGramSchmidt(A: np.matrix) -> tuple:
